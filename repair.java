@@ -5,7 +5,7 @@ import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
 
 public class repair {
-    static int count = 0;
+    static long count = 0;
     public static void main(String[] args) throws IOException {
         BufferedReader r1 = new BufferedReader(new InputStreamReader(System.in));
         String s1 = r1.readLine();
@@ -16,19 +16,19 @@ public class repair {
         for (int i = 0; i < v.length; i++) {
             v[i] = Integer.valueOf(s3[i]);
         }
-        Integer res = repairnum(v);
+        Long res = repairnum(v);
         BufferedWriter w1 = new BufferedWriter(new OutputStreamWriter(System.out));
         w1.write(res.toString());
         w1.flush();
     }
-    static int repairnum(Integer a[]){
+    static long repairnum(Integer a[]){
         count = 0;
         merge_sort(a, 0, a.length-1);
         return count;
     }
     static void merge_sort(Integer a[], int l, int r){
         if(l>=r) return ;
-        int mid = (l+r)>>1;
+        int mid = (l+r)/2;
         merge_sort(a, l, mid);
         merge_sort(a, mid+1, r);
         Integer tmp[] = new Integer[r-l+1];
