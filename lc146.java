@@ -1,4 +1,3 @@
-import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -83,7 +82,7 @@ class LRUCache {
             size--;
         } catch (Exception e) {
             System.err.println(e.toString());
-            //TODO: handle exception
+            
         }
     }
 }
