@@ -1,0 +1,41 @@
+import java.util.ArrayList;
+import java.util.LinkedList;
+import java.util.List;
+ 
+public class lc199 {
+    public static void main(String[] args) {
+        MyTreeNode root = new MyTreeNode(1);
+        root.left = new MyTreeNode(2);
+        root.right = new MyTreeNode(3);
+        root.left.right = new MyTreeNode(5);
+        root.right.right = new MyTreeNode(4);
+        List<Integer> l1 = rightSideView(root);
+        System.out.println(l1);
+    }
+    public static List<Integer> rightSideView(MyTreeNode root) {
+        List<Integer> res = new ArrayList<>();
+        if(root==null) return res;
+        LinkedList<MyTreeNode> q1 = new LinkedList<>();
+        MyTreeNode cur = root;
+        q1.add(cur);
+        while(q1.isEmpty()==false){
+            res.add(q1.getLast().val);
+            int n = q1.size();
+            for (int i = 0; i < n; i++) {
+                cur = q1.getFirst();
+                if(cur.left!=null){
+                    q1.add(cur.left);
+                }
+                if(cur.right!=null){
+                    q1.add(cur.right);
+                }
+                q1.removeFirst();
+            }
+        }
+        return res;
+    }
+    
+    //List l1 = new LinkedList<>();
+    
+}
+
