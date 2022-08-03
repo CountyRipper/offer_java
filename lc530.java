@@ -1,7 +1,3 @@
-import java.util.ArrayList;
-import java.util.Comparator;
-import java.util.List;
-
 public class lc530 {
     int ans,pre;
     public int getMinimumDifference(TreeNode root) {
@@ -20,5 +16,17 @@ public class lc530 {
         }
         pre = root.val;
         midbacktrack(root.right);
+    }
+}
+class TreeNode {
+    int val;
+    TreeNode left;
+    TreeNode right;
+    TreeNode() {}
+    TreeNode(int val) { this.val = val; }
+    TreeNode(int val, TreeNode left, TreeNode right) {
+        this.val = val;
+        this.left = left;
+        this.right = right;
     }
 }

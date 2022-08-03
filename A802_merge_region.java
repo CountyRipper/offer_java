@@ -3,9 +3,7 @@ import java.io.BufferedWriter;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
-import java.nio.Buffer;
 import java.util.ArrayList;
-import java.util.Comparator;
 //贪心法合并区间，需要排序
 public class A802_merge_region {
     private static int[] a;

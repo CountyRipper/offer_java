@@ -2,8 +2,6 @@ import java.util.LinkedList;
 import java.util.Queue;
 import java.util.Scanner;
 
-import javax.management.Query;
-
 public class A829_simulate_queue {
     public static void main(String[] args) {
         Queue<Integer> q1 = new LinkedList<>();
@@ -29,6 +27,7 @@ public class A829_simulate_queue {
                 if(s3[0].equals("query")) System.out.println(q1.peek());
             }
         }
+        s.close();
     }
     
 }

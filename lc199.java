@@ -4,19 +4,19 @@ import java.util.List;
  
 public class lc199 {
     public static void main(String[] args) {
-        MyTreeNode root = new MyTreeNode(1);
-        root.left = new MyTreeNode(2);
-        root.right = new MyTreeNode(3);
-        root.left.right = new MyTreeNode(5);
-        root.right.right = new MyTreeNode(4);
+        TreeNode root = new TreeNode(1);
+        root.left = new TreeNode(2);
+        root.right = new TreeNode(3);
+        root.left.right = new TreeNode(5);
+        root.right.right = new TreeNode(4);
         List<Integer> l1 = rightSideView(root);
         System.out.println(l1);
     }
-    public static List<Integer> rightSideView(MyTreeNode root) {
+    public static List<Integer> rightSideView(TreeNode root) {
         List<Integer> res = new ArrayList<>();
         if(root==null) return res;
-        LinkedList<MyTreeNode> q1 = new LinkedList<>();
-        MyTreeNode cur = root;
+        LinkedList<TreeNode> q1 = new LinkedList<>();
+        TreeNode cur = root;
         q1.add(cur);
         while(q1.isEmpty()==false){
             res.add(q1.getLast().val);
@@ -37,5 +37,17 @@ public class lc199 {
     
     //List l1 = new LinkedList<>();
     
+}
+class TreeNode {
+    int val;
+    TreeNode left;
+    TreeNode right;
+    TreeNode() {}
+    TreeNode(int val) { this.val = val; }
+    TreeNode(int val, TreeNode left, TreeNode right) {
+        this.val = val;
+        this.left = left;
+        this.right = right;
+    }
 }
 
