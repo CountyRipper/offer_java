@@ -15,12 +15,3 @@ public class lc236 {
         else return root; //找到了
     }
 }
-
-class TreeNode {
-    int val;
-    TreeNode left;
-    TreeNode right;
-    TreeNode(int x) {
-        val = x;
-    }
-}

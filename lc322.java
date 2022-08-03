@@ -12,7 +12,7 @@ public class lc322 {
                 }
             }
         }
-        return dp[amount]==Integer.MAX_VALUE?-1:dp[amount];
+        return dp[amount]>amount?-1:dp[amount];
     }
     public static void main(String[] args) {
         int []coins = {2,5};
