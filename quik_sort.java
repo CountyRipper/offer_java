@@ -15,7 +15,7 @@ public class quik_sort {
             v[i] = Integer.valueOf(a[i]);
         }
         //或者包装bufferedwriter
-        quik_sort1(v,0,v.length-1);
+        quik_sort2(v,0,v.length-1);
         BufferedWriter writer = new BufferedWriter(new OutputStreamWriter(System.out));
         for (int i = 0; i < v.length; i++) {
             //writer.write(a[i]);
@@ -23,6 +23,20 @@ public class quik_sort {
             writer.write(" ");
         }
         writer.flush();
+    }
+    public static void quik_sort2(Integer a[],int l, int r){
+        if(l>=r) return;
+        int i = l, j = r;
+        int x = a[(l+r)>>1];
+        while(i<j){
+            while(a[i]<=x&&i<j){i++;}
+            a[j] = a[i];
+            while(a[j]>=x&&i<j){j--;}
+            a[i] = a[j];
+        }
+        a[j] = x;
+        quik_sort1(a,l,j-1);
+        quik_sort1(a,j+1,r);
     }
     public static void quik_sort1(Integer a[],int l, int r){
         if(l>=r) return;
